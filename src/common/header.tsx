@@ -2,9 +2,14 @@
 
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
   return (
     <header className="header">
       <div className="header-top">
@@ -68,7 +73,14 @@ const Header = () => {
             <Link className="navbar-brand" href="/">
               <img src="assets/img/logo/logo.png" alt="logo" />
           </Link>
-            <div className="mobile-menu-right">
+          <button className={`mobile-menu-btn ${isMobileMenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu}>
+              {isMobileMenuOpen ? (
+                <Icon icon="fa6-solid:xmark" />
+              ) : (
+                <Icon icon="fa6-solid:bars" />
+              )}
+            </button>
+            {/* <div className="mobile-menu-right">
               <div className="mobile-menu-list">
                 <Link href="#" className="mobile-menu-link search-box-outer">
                   <i className="far fa-search" />
@@ -86,8 +98,8 @@ const Header = () => {
                   <i className="far fa-bars" />
                 </span>
               </button>
-            </div>
-            <div className="collapse navbar-collapse" id="main_nav">
+            </div> */}
+            <div className={`navbar-collapse ${isMobileMenuOpen ? 'open' : ''}`} id="main_nav">
               <ul className="navbar-nav flex">
                 <li className="nav-item dropdown">
                   <Link
@@ -114,6 +126,7 @@ const Header = () => {
                 </Link>
                
                 </li>
+                
               </ul>
               <div className="header-nav-right">
                 
