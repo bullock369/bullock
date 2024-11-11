@@ -32,7 +32,7 @@ const QualityService = () => {
                 +91 9998829141
               </a>
             </div>
-            <a href="#" className="theme-btn">
+            <a href="/contact-us" className="theme-btn">
               Contact Now <i className="far fa-arrow-right" />
             </a>
           </div>

@@ -6,24 +6,25 @@ import React from "react";
 
 const footerLinks = [
   {
-    href: "#",
+    href: "/about-us",
     iconClass: "fab fa-facebook-f",
     text: "About Us",
   },
   {
+    href: "/services",
+    iconClass: "fas fa-dot-circle",
+    text: "Services",
+  },
+ 
+  {
     href: "#",
     iconClass: "fas fa-dot-circle",
-    text: "FAQ's",
+    text: "Our Team",
   },
   {
     href: "#",
     iconClass: "fas fa-dot-circle",
     text: "Privacy policy",
-  },
-  {
-    href: "#",
-    iconClass: "fas fa-dot-circle",
-    text: "Our Team",
   },
 ];
 const footerSecLinks = [
@@ -80,7 +81,7 @@ const Footer = () => {
       <div className="footer-widget">
         <div className="container">
           <div className="row footer-widget-wrapper pt-100 pb-70">
-            <div className="col-md-6 col-lg-4">
+            <div className="col-md-6 col-lg-6">
               <div className="footer-widget-box about-us">
                 <Link href="#" className="footer-logo">
                   <img src="assets/img/logo/logo.png" alt="logo" />
@@ -137,7 +138,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-6 col-lg-3">
+            <div className="col-md-6 col-lg-4">
               <div className="footer-widget-box list">
                 <h4 className="footer-widget-title">Our Services</h4>
                 <ul className="footer-list">
@@ -152,7 +153,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-6 col-lg-3">
+            {/* <div className="col-md-6 col-lg-3">
               <div className="footer-widget-box list">
                 <h4 className="footer-widget-title">Newsletter</h4>
                 <div className="footer-newsletter">
@@ -171,7 +172,7 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

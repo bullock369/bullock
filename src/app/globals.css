@@ -705,16 +705,12 @@ scroll-top css
   .footer-widget-box {
     margin-bottom: 50px;
   }
-
+/* 
   .header-top-account {
     display: none;
-  }
+  } */
 
-  .header-top::before {
-    width: 320px;
-  }
-
-  .header-top-contact ul {
+  /* .header-top-contact ul {
     gap: 10px;
   }
 
@@ -723,22 +719,15 @@ scroll-top css
     height: 34px;
     line-height: 37px;
     margin-left: 0;
-  }
+  } */
 
-  .header-top-left {
+  /* .header-top-left {
     margin-right: 5px;
-  }
+  } */
 }
 
-.header-top {
-  background: #002739;
-  padding: 8px 0;
-  position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 2;
-}
 
-.header-top-wrapper {
+/* .header-top-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -789,11 +778,6 @@ scroll-top css
   margin-right: 5px;
 }
 
-.header-top-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
 
 .header-top-social {
   display: flex;
@@ -825,7 +809,7 @@ scroll-top css
 .header-top-social a:hover {
   background: #24acb7;
   color: #fff;
-}
+} */
 
 .header-phone {
   display: flex;
@@ -864,9 +848,6 @@ scroll-top css
 }
 
 @media all and (max-width: 992px) {
-  .header-top {
-    display: none;
-  }
 
   .shadow-title {
     font-size: 100px;
@@ -1919,6 +1900,11 @@ feature css
   left: 25%;
   top: 26%;
 }
+.feature-icon:last-of-type  svg {
+    position: absolute !important;
+    left: 34% !important;
+}
+
 
 .feature-content {
   position: absolute;
@@ -2158,7 +2144,19 @@ choose css
   }
 }
 
+header{
+  z-index: 2;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .25);
+  bottom: auto;
+  left: 0;
+  backdrop-filter: blur(20px);
+  background-color: var(--color-white);
+  right: 0;
 
+}
 
 .cta-area {
   padding-top: 80px;
@@ -2348,7 +2346,6 @@ choose css
 
 .contact-info {
   display: flex;
-  align-items: center;
   gap: 15px;
   padding: 30px 0;
   position: relative;
@@ -2377,6 +2374,12 @@ choose css
   text-align: center;
   border-radius: 50px;
   background: #24acb7;
+}
+.contact-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .contact-info h5 {
@@ -14002,5 +14005,21 @@ fieldset:disabled .btn {
   }
   .site-title{
     font-size: 28px;
+  }
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

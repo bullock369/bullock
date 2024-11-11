@@ -12,7 +12,7 @@ const Header = () => {
   };
   return (
     <header className="header">
-      <div className="header-top">
+      {/* <div className="header-top">
         <div className="container">
           <div className="header-top-wrapper">
             <div className="header-top-left">
@@ -27,9 +27,9 @@ const Header = () => {
                   </li>
                   <li>
                     <div className="header-top-contact-info">
-                      <Link href="mailto:rahul.000.888.777@gmail.com">
+                      <Link href="mailto:info@bullockindia.com">
                         <i className="far fa-envelopes" />
-                        rahul.000.888.777@gmail.com
+                        info@bullockindia.com
                     </Link>
                     </div>
                   </li>
@@ -66,7 +66,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="main-navigation">
         <nav className="navbar navbar-expand-lg">
           <div className="container custom-nav">
@@ -80,25 +80,6 @@ const Header = () => {
                 <Icon icon="fa6-solid:bars" />
               )}
             </button>
-            {/* <div className="mobile-menu-right">
-              <div className="mobile-menu-list">
-                <Link href="#" className="mobile-menu-link search-box-outer">
-                  <i className="far fa-search" />
-              </Link>
-              </div>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#main_nav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-btn-icon">
-                  <i className="far fa-bars" />
-                </span>
-              </button>
-            </div> */}
             <div className={`navbar-collapse ${isMobileMenuOpen ? 'open' : ''}`} id="main_nav">
               <ul className="navbar-nav flex">
                 <li className="nav-item dropdown">

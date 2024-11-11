@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
+import { Icon } from "@iconify/react";
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +23,8 @@ const GetInTouch = () => {
     message: '',
     subject: '',
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -76,7 +79,7 @@ const GetInTouch = () => {
     if (!validateForm()) {
       return; // Stop submission if validation fails
     }
-
+    setLoading(true); 
     try {
       const response = await fetch('/api/submit-form', {
         method: 'POST',
@@ -114,6 +117,9 @@ const GetInTouch = () => {
       console.error('Error submitting form:', error);
       toast.error('Failed to submit form. Please try again later.');
     }
+    finally {
+      setLoading(false); // Stop loading
+    }
   };
 
   return (
@@ -126,7 +132,9 @@ const GetInTouch = () => {
                 <div className="contact-content">
                   <div className="contact-info">
                     <div className="contact-info-icon">
-                      <i className="flaticon-location-pin" />
+                    <span className="contact-icon">
+                      <Icon icon="carbon:location" />
+                    </span>
                     </div>
                     <div className="contact-info-content">
                       <h5>Office Address</h5>
@@ -135,7 +143,9 @@ const GetInTouch = () => {
                   </div>
                   <div className="contact-info">
                     <div className="contact-info-icon">
-                      <i className="flaticon-phone-call" />
+                    <span className="contact-icon">
+                        <Icon icon="ep:phone" />
+                      </span>
                     </div>
                     <div className="contact-info-content">
                       <h5>Call Us</h5>
@@ -144,16 +154,21 @@ const GetInTouch = () => {
                   </div>
                   <div className="contact-info">
                     <div className="contact-info-icon">
-                      <i className="flaticon-email" />
+                    <span className="contact-icon">
+                        <Icon icon="mdi:email-edit-outline" />
+                      </span>
                     </div>
                     <div className="contact-info-content">
                       <h5>Email Us</h5>
-                      <p>rahul.000.888.777@gmail.com</p>
+                      <p>info@bullockindia.com</p>
                     </div>
                   </div>
                   <div className="contact-info border-0">
                     <div className="contact-info-icon">
-                      <i className="flaticon-time" />
+                    <span className="contact-icon">
+                        <Icon icon="mdi:timer-lock-open-outline" />
+                      </span>
+                      
                     </div>
                     <div className="contact-info-content">
                       <h5>Open Time</h5>
@@ -253,9 +268,19 @@ const GetInTouch = () => {
                       />
                       {errors.message && <div className="error-message">{errors.message}</div>}
                     </div>
-                    <button type="submit" className="theme-btn">
-                      Send Message <i className="far fa-paper-plane" />
-                    </button>
+                    <button type="submit" className="theme-btn" disabled={loading}>
+                      {loading ? (
+                        <>
+                          <div className="spinner"></div>  
+                        </>
+                      ) : (
+                        <>
+                          Send Message <i className="far fa-paper-plane" />
+                        </>
+                      )}
+                  </button>
+
+
                   </form>
                 </div>
               </div>
