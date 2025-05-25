@@ -1,35 +1,37 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MongoClient } from 'mongodb';
 
-// Define MongoDB URI and database name
-if (!process.env.MONGODB_URI) {
-  throw new Error("Missing MONGODB_URI environment variable");
-}
 const uri = process.env.MONGODB_URI;
-
-// const uri = process.env.MONGODB_URI || "mongodb://localhost:27017";
 const dbName = "bullock";
 
-// Define the POST method handler
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json(); // Parse the request body
+    if (!uri) {
+      console.error("Missing MONGODB_URI");
+      return NextResponse.json({ message: 'Missing MongoDB URI' }, { status: 500 });
+    }
 
-    // Connect to MongoDB
+    console.log("Parsing body...");
+    const body = await req.json();
+
+    console.log("Connecting to MongoDB...");
     const client = new MongoClient(uri);
     await client.connect();
+
+    console.log("Connected. Accessing DB...");
     const db = client.db(dbName);
     const collection = db.collection('contacts');
 
-    // Insert form data into the MongoDB collection
+    console.log("Inserting data...");
     await collection.insertOne(body);
 
-    // Close the database connection
+    console.log("Closing connection...");
     await client.close();
 
     return NextResponse.json({ message: 'Form submitted successfully' });
-  } catch (error) {
-    console.error('Error:', error);
+
+  } catch (error: any) {
+    console.error("FULL ERROR:", error?.message || error);
     return NextResponse.json({ message: 'Failed to submit form' }, { status: 500 });
   }
 }
