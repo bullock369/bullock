@@ -5,7 +5,6 @@ import ChooseUs from "@/components/choose-us";
 import FirstCard from "@/components/first-card";
 import HeroSlider from "@/components/hero-slider";
 import OurTeam from "@/components/our-team";
-import PhotoGallery from "@/components/photo-gallery";
 import QualityService from "@/components/quality-service";
 import ServiceWeOffer from "@/components/service-we-offer";
 import React from "react";
@@ -19,7 +18,6 @@ const LandingPage = () => {
       <AboutUs />
       <ServiceWeOffer />
       <QualityService />
-      <PhotoGallery />
       <OurTeam />
       <ChooseUs />
       <Footer />
