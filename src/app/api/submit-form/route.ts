@@ -2,7 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { MongoClient } from 'mongodb';
 
 // Define MongoDB URI and database name
-const uri = process.env.MONGODB_URI || "mongodb://localhost:27017";
+if (!process.env.MONGODB_URI) {
+  throw new Error("Missing MONGODB_URI environment variable");
+}
+const uri = process.env.MONGODB_URI;
+
+// const uri = process.env.MONGODB_URI || "mongodb://localhost:27017";
 const dbName = "bullock";
 
 // Define the POST method handler
