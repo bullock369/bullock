@@ -80,7 +80,7 @@ const Footer = () => {
     <footer className="footer-area">
       <div className="footer-widget">
         <div className="container">
-          <div className="row footer-widget-wrapper pt-100 pb-70">
+          <div className="row footer-widget-wrapper pt-24 pb-16">
             <div className="col-md-6 col-lg-6">
               <div className="footer-widget-box about-us">
                 <Link href="#" className="footer-logo">
@@ -179,13 +179,13 @@ const Footer = () => {
       <div className="copyright">
         <div className="container">
           <div className="row">
-            <div className="col-md-6 align-self-center">
+            <div className="!w-1/2 self-center">
               <p className="copyright-text">
                 © Copyright <span id="date">2024</span>{" "}
                 <Link href="#"> Bullock </Link> All Rights Reserved.
               </p>
             </div>
-            <div className="col-md-6 align-self-center">
+            <div className="!w-1/2 self-center">
               <ul className="footer-social">
                 <li>
                   <Link href="#">

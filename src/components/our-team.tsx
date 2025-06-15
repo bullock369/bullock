@@ -32,7 +32,7 @@ const teamMembers = [
 
 const OurTeam = () => {
   return (
-    <div className="team-area bg pt-120 pb-50">
+    <div className="team-area bg pt-28 pb-12">
       <div className="container">
         <div className="row">
           <div
@@ -57,7 +57,7 @@ const OurTeam = () => {
             </div>
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row !mt-12">
           {teamMembers.map((member, index) => (
             <div className="col-md-6 col-lg-3" key={index}>
               <div

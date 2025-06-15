@@ -1,9 +1,39 @@
+
+'use client';
+
 import React from 'react'
+import { Icon } from "@iconify/react";
+const chooseItems = [
+  {
+    icon: "tabler:user-cog",
+    uilIcon: "tabler:user-cog",
+    title: "Skilled Technicians",
+    description: "There are many variations of available the majority."
+  },
+  {
+    icon: "mdi:award",
+    uilIcon: "mdi:award",
+    title: "Quality Guarantee",
+    description: "There are many variations of available the majority."
+  },
+  {
+    icon: "flaticon-padlock-1",
+    uilIcon: "uil:lock-alt",
+    title: "Your Trusted Partner",
+    description: "There are many variations of available the majority."
+  },
+  {
+    icon: "mdi:calendar-check-outline",
+    uilIcon: "mdi:calendar-check-outline",
+    title: "07+ Years Experience",
+    description: "There are many variations of available the majority."
+  }
+];
 
 const ChooseUs = () => {
   return (
     
-    <div className="choose-area py-120">
+    <div className="choose-area py-28">
   <div className="container">
     <div className="row align-items-center">
       <div className="col-lg-6">
@@ -19,8 +49,8 @@ const ChooseUs = () => {
           }}
         >
           <div className="site-heading mb-3">
-            <span className="site-title-tagline">
-              <i className="fas fa-bring-forward" /> Why Choose Us
+            <span className="site-title-tagline flex mb-4">
+              <Icon icon="mdi:star-check-outline" className="w-8 h-8 text-[#24acb7] mr-4" /> Why Choose Us
             </span>
             <h2 className="site-title">
               When You Need Solutions <span>We Are</span> Always Here
@@ -33,52 +63,25 @@ const ChooseUs = () => {
             believable.
           </p>
           <div className="choose-wrapper mt-4">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="choose-item">
-                  <div className="choose-icon">
-                    <i className="flaticon-tool" />
-                  </div>
-                  <div className="choose-item-content">
-                    <h4>Skilled Technicians</h4>
-                    <p>There are many variations of available the majority.</p>
-                  </div>
-                </div>
+          <div className="grid md:grid-cols-2 gap-6">
+      {chooseItems.map((item, index) => (
+        <div key={index} className="choose-item">
+          <div className="choose-item-content">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                {item.uilIcon && (
+                  <Icon icon={item.uilIcon} className="w-8 h-8 text-[#24acb7]" />
+                )}
               </div>
-              <div className="col-lg-6">
-                <div className="choose-item">
-                  <div className="choose-icon">
-                    <i className="flaticon-cup" />
-                  </div>
-                  <div className="choose-item-content">
-                    <h4>Quality Guarantee</h4>
-                    <p>There are many variations of available the majority.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <div className="choose-item">
-                  <div className="choose-icon">
-                    <i className="flaticon-padlock-1" />
-                  </div>
-                  <div className="choose-item-content">
-                    <h4>Your Trusted Partner</h4>
-                    <p>There are many variations of available the majority.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <div className="choose-item">
-                  <div className="choose-icon">
-                    <i className="flaticon-diploma-1" />
-                  </div>
-                  <div className="choose-item-content">
-                    <h4>07+ Years Experience</h4>
-                    <p>There are many variations of available the majority.</p>
-                  </div>
-                </div>
+              <div>
+                <h4 className="text-xl text-black font-bold">{item.title}</h4>
+                <p className="text-gray-600">{item.description}</p>
               </div>
             </div>
+          </div>
+        </div>
+      ))}
+    </div>
           </div>
         </div>
       </div>

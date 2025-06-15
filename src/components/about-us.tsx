@@ -3,10 +3,25 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
+const aboutList = [
+  {
+    icon: "uil:arrow-circle-right",
+    text: "At vero eos et accusamus et iusto odio"
+  },
+  {
+    icon: "uil:arrow-circle-right",
+    text: "Established fact that a reader will be distracted"
+  },
+  {
+    icon: "uil:arrow-circle-right",
+    text: "Sed ut perspiciatis unde omnis iste natus sit"
+  }
+];
+
 const AboutUs = () => {
   return (
     <div>
-      <div className="about-area py-120">
+      <div className="about-area py-28">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -68,10 +83,13 @@ const AboutUs = () => {
                 </p>
                 <div className="about-list-wrapper">
                   <ul className="about-list list-unstyled">
-                    <li>At vero eos et accusamus et iusto odio</li>
-                    <li>Established fact that a reader will be distracted</li>
-                    <li>Sed ut perspiciatis unde omnis iste natus sit</li>
-                  </ul>
+                  {aboutList.map((item, index) => (
+                    <li key={index} className="flex items-center">
+                      <Icon icon={item.icon} className="mr-2 text-[#24acb7] " />
+                      {item.text}
+                    </li>
+                  ))}
+                </ul>
                 </div>
                 <a href="/about-us" className="theme-btn mt-4 flex w-fit">
                   Discover More

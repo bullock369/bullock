@@ -1,9 +1,10 @@
 import LandingPage from "@/pages/home";
+import WithLoader from "@/components/WithLoader";
 
 export default function Home() {
   return (
- <div className="">
- <LandingPage />
- </div>
+    <WithLoader>
+      <LandingPage />
+    </WithLoader>
   );
 }

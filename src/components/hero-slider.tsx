@@ -6,12 +6,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HeroSlider = () => {
-  // Slider settings
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true, 
+    autoplaySpeed: 4000, 
+    cssEase: 'ease-in-out',
     prevArrow: <button className="hero-slider__button hero-slider__button--prev"><i className="fa fa-2x fa-chevron-left" aria-hidden="true"></i></button>,
     nextArrow: <button className="hero-slider__button hero-slider__button--next"><i className="fa fa-2x fa-chevron-right" aria-hidden="true"></i></button>
   };

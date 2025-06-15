@@ -62,7 +62,7 @@ const servicesData = [
 
 const ServiceWeOffer = () => {
   return (
-    <div className="service-area bg py-120">
+    <div className="service-area bg py-28">
       <div className="container">
         <div className="row">
         
@@ -99,11 +99,11 @@ const ServiceWeOffer = () => {
                     <p>{service.title}</p>
                   </h3>
                   <p className="service-text">{service.text}</p>
-                  <div className="service-arrow">
+                  {/* <div className="service-arrow">
                     <a href="#" className="service-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="m224.49 136.49l-72 72a12 12 0 0 1-17-17L187 140H40a12 12 0 0 1 0-24h147l-51.49-51.52a12 12 0 0 1 17-17l72 72a12 12 0 0 1-.02 17.01"/></svg>
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
